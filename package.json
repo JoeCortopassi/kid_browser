@@ -1,0 +1,42 @@
+{
+  "name": "kid_browser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/JoeCortopassi/kid_browser.git",
+  "author": "Joe Cortopassi <joe@joecortopassi.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.57.3",
+    "flow-typed": "^2.2.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^6.0.0",
+    "prettier": "1.9.2",
+    "regenerator-runtime": "^0.11.0"
+  },
+  "scripts": {
+    "start": "nodemon -q -w src/ --ext '.' --exec 'yarn build_and_run'",
+    "build_and_run": "yarn build; node build/app.js",
+    "build": "babel src -d build",
+    "test": "jest",
+    "testWatch": "jest --watchAll",
+    "precommit": "lint-staged",
+    "lint": "prettier --write *"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  },
+  "prettier": {
+    "semi": true
+  }
+}

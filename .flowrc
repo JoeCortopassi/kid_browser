@@ -1,0 +1,10 @@
+[ignore]
+.*/node_modules/*
+<PROJECT_ROOT>/build/.*
+
+[include]
+
+[libs]
+
+[options]
+all=true
